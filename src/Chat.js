@@ -10,6 +10,7 @@ export default function Chat({person, clearPerson}) {
 
     // Substitua "sua-chave-de-api-aqui" pela sua chave de API real
     const apiKey = process.env.REACT_APP_CHATGPT_KEY
+    console.log('apiKey', apiKey)
     
     const speechText = (text) => {
         if (speechSynthesis.paused && speechSynthesis.speaking) {
