@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import { Grid } from "@mui/material";
 import CharacterSelect from './CharacterSelect.js';
 import Chat from './Chat.js';
 

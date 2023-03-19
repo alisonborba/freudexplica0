@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Grid, IconButton, OutlinedInput, Typography } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
-import { chars } from './characters'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export default function Chat({person, clearPerson}) {
@@ -10,20 +9,7 @@ export default function Chat({person, clearPerson}) {
     const [dialog, setDialog] = useState([]);
 
     // Substitua "sua-chave-de-api-aqui" pela sua chave de API real
-    const apiKey = "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";
-
-    // Substitua "modelo-experimental" pelo nome do modelo que deseja usar (ex: "text-davinci-002")
-    const modelName = "text-davinci-003";
-
-    // URL da API do OpenAI
-    const url = `https://api.openai.com/v1/engines/${modelName}/completions`;
-    
-    // Cabeçalhos HTTP para enviar com a solicitação
-    const headers = {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-    };
-
+    const apiKey = process.env.REACT_APP_CHATGPT_KEY
     
     const speechText = (text) => {
         if (speechSynthesis.paused && speechSynthesis.speaking) {
@@ -48,9 +34,15 @@ export default function Chat({person, clearPerson}) {
           n: 1,
           // stop: "."
         });
+
+        // Cabeçalhos HTTP para enviar com a solicitação
+        const headers = {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+        };
     
         // Envie a solicitação HTTP para a API do OpenAI
-        fetch(url, {
+        fetch(`https://api.openai.com/v1/engines/${'text-davinci-003'}/completions`, {
           method: "POST",
           headers,
           body: data,
@@ -85,7 +77,7 @@ export default function Chat({person, clearPerson}) {
             alignItems: 'stretch',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            backgroundImage: `linear-gradient(to bottom, rgba(40, 44, 53, 0.9), rgba(40, 44, 53, 0.9)), url(/${person.img})`,
+            backgroundImage: `linear-gradient(to bottom, rgba(40, 44, 53, 0.9), rgba(40, 44, 53, 0.9)), url(require(/${person.img}))`,
             }}
         >
         <Grid item>
@@ -104,7 +96,16 @@ export default function Chat({person, clearPerson}) {
         <Grid item>
             {loading && <div>Loading...</div>}
         </Grid>
+            {/* <img src={`require(${person.img})`} alt="adeda"/> */}
+            {/* <img src={require('../../assets/images/madre-teresa.jpg')} alt="adeda"/> */}
+            <img src={require('./images/madre-teresa.jpg')} alt="qwe"/>
+            {/* <img src={require('/assets/images/madre-teresa.jpg')} alt="adeda"/> */}
+            <img src='../assets/images/madre-teresa.jpg' alt="ade"/>
+            <img src='./src' alt="ade"/>
+            <img src='https://i.stack.imgur.com/y1LiB.png' alt="ade"/>
+            <img src={process.env.PUBLIC_URL + '/madre-teresa.jpg'} alt="logo" />
 
+            {/* <img src={require(`images/madre-teresa.jpg`).default} alt='pic' /> */}
         <Grid item>
             <OutlinedInput
             sx={{color: 'white', border: '2px solid white', width: '98%', m: 1}}
