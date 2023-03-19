@@ -11,12 +11,13 @@ jobs:
 
       - name: Install and Build
         run: |
-          npm run predeploy
-          npm run deploy
+          npm install
+          npm run-script build
         env:
           REACT_APP_CHATGPT_KEY: ${{ secrets.REACT_APP_CHATGPT_KEY }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build # The folder the action should deploy.
+          BRANCH: gh-pages
+          FOLDER: build
