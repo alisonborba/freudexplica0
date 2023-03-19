@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/freudexplica/static/css/main.bd34e244.chunk.css",
-    "main.js": "/freudexplica/static/js/main.d739d4a5.chunk.js",
-    "main.js.map": "/freudexplica/static/js/main.d739d4a5.chunk.js.map",
+    "main.js": "/freudexplica/static/js/main.a7f9768c.chunk.js",
+    "main.js.map": "/freudexplica/static/js/main.a7f9768c.chunk.js.map",
     "runtime-main.js": "/freudexplica/static/js/runtime-main.f79ea025.js",
     "runtime-main.js.map": "/freudexplica/static/js/runtime-main.f79ea025.js.map",
     "static/js/2.c49d2ed6.chunk.js": "/freudexplica/static/js/2.c49d2ed6.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.f79ea025.js",
     "static/js/2.c49d2ed6.chunk.js",
     "static/css/main.bd34e244.chunk.css",
-    "static/js/main.d739d4a5.chunk.js"
+    "static/js/main.a7f9768c.chunk.js"
   ]
 }
