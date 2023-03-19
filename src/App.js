@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { Grid } from "@mui/material";
+import CharacterSelect from './CharacterSelect.js';
+import Chat from './Chat.js';
 
 function App() {
+
+  const [person, setPerson] = useState();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {!person && <CharacterSelect select={(c) => setPerson(c)}/> }
+        {person && <Chat person={person} clearPerson={() => setPerson(null)}/> }
     </div>
   );
 }
