@@ -98,7 +98,7 @@ export default function Chat({person, clearPerson}) {
         </Grid>
             {/* <img src={`require(${person.img})`} alt="adeda"/> */}
             {/* <img src={require('../../assets/images/madre-teresa.jpg')} alt="adeda"/> */}
-            <img src={require('./images/madre-teresa.jpg')} alt="qwe"/>
+            {/* <img src={require('./images/madre-teresa.jpg')} alt="qwe"/> */}
             {/* <img src={require('/assets/images/madre-teresa.jpg')} alt="adeda"/> */}
             <img src='../assets/images/madre-teresa.jpg' alt="ade"/>
             <img src='./src' alt="ade"/>
