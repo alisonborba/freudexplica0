@@ -11,8 +11,8 @@ jobs:
 
       - name: Install and Build
         run: |
-          npm run build
-          gh-pages -d build
+          npm run predeploy
+          npm run deploy
         env:
           REACT_APP_CHATGPT_KEY: ${{ secrets.REACT_APP_CHATGPT_KEY }}
 
