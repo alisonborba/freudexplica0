@@ -66,8 +66,6 @@ export default function Chat({person, clearPerson}) {
         }
     };
 
-
-
     return <Grid
         container
         direction="column"
@@ -77,7 +75,7 @@ export default function Chat({person, clearPerson}) {
             alignItems: 'stretch',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            backgroundImage: `linear-gradient(to bottom, rgba(40, 44, 53, 0.9), rgba(40, 44, 53, 0.9)), url(require(/${person.img}))`,
+            backgroundImage: `linear-gradient(to bottom, rgba(40, 44, 53, 0.9), rgba(40, 44, 53, 0.9)), url(${person.img})`,
             }}
         >
         <Grid item>
@@ -96,16 +94,6 @@ export default function Chat({person, clearPerson}) {
         <Grid item>
             {loading && <div>Loading...</div>}
         </Grid>
-            {/* <img src={`require(${person.img})`} alt="adeda"/> */}
-            {/* <img src={require('../../assets/images/madre-teresa.jpg')} alt="adeda"/> */}
-            {/* <img src={require('./images/madre-teresa.jpg')} alt="qwe"/> */}
-            {/* <img src={require('/assets/images/madre-teresa.jpg')} alt="adeda"/> */}
-            <img src='../assets/images/madre-teresa.jpg' alt="ade"/>
-            <img src='./src' alt="ade"/>
-            <img src='https://i.stack.imgur.com/y1LiB.png' alt="ade"/>
-            <img src={process.env.PUBLIC_URL + '/madre-teresa.jpg'} alt="logo" />
-
-            {/* <img src={require(`images/madre-teresa.jpg`).default} alt='pic' /> */}
         <Grid item>
             <OutlinedInput
             sx={{color: 'white', border: '2px solid white', width: '98%', m: 1}}
@@ -125,6 +113,5 @@ export default function Chat({person, clearPerson}) {
             }
             />
         </Grid>
-
     </Grid>
 }

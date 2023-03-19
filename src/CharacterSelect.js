@@ -23,7 +23,7 @@ export default function CharacterSelect({select}) {
                                     sx={{
                                         pt: '200px',
                                         position: 'relative',
-                                        backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1)), url(/${c.img})`,
+                                        backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1)), url(${c.img})`,
                                         backgroundSize: 'cover',
                                         backgroundRepeat: 'no-repeat',
                                         textAlign: 'justify'
